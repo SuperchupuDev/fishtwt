@@ -8,5 +8,5 @@
 position = Vector2(607, 360)
 
 [node name="Mob2" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(610, 622)
+position = Vector2(607, 622)
 type = 1
