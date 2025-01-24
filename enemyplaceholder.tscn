@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://u3m4fscl81jc"]
+[gd_scene load_steps=4 format=3 uid="uid://u3m4fscl81jc"]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[ext_resource type="Script" path="res://enemyplaceholder.gd" id="1_2e40q"]
+[ext_resource type="Texture2D" uid="uid://dp1bq0gwxsq2t" path="res://placeholder.png" id="1_hwlyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n44w5"]
+size = Vector2(276, 262)
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+input_pickable = true
+gravity_scale = -0.5
+script = ExtResource("1_2e40q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_n44w5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hwlyw")
