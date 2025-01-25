@@ -4,7 +4,7 @@ var enemy = load("res://enemyplaceholder.tscn")
 var t: float = 0.0
 
 func SpawnObject():
-	var init_pos = Vector2(576,567)
+	var init_pos = Vector2(576,648)
 	var enemy_instance = enemy.instantiate()
 	enemy_instance.position = init_pos
 	add_child(enemy_instance)

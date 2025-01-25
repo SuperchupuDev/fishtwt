@@ -1,36 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://u3m4fscl81jc"]
+[gd_scene load_steps=5 format=3 uid="uid://u3m4fscl81jc"]
 
 [ext_resource type="Script" path="res://enemyplaceholder.gd" id="1_2e40q"]
-[ext_resource type="Texture2D" uid="uid://dp1bq0gwxsq2t" path="res://placeholder.png" id="1_hwlyw"]
+[ext_resource type="Texture2D" uid="uid://c85yj5djkowqe" path="res://TEXTBOX1.png" id="2_jw40y"]
+[ext_resource type="Texture2D" uid="uid://dxcgidwihytln" path="res://fishpfp1.png" id="3_dwtiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n44w5"]
-size = Vector2(276, 262)
+size = Vector2(764, 106)
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 input_pickable = true
 gravity_scale = 0.0
-linear_velocity = Vector2(0, -50)
+linear_velocity = Vector2(0, -108)
 linear_damp_mode = 1
 script = ExtResource("1_2e40q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
-scale = Vector2(3, 1)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_n44w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 1)
-texture = ExtResource("1_hwlyw")
+texture = ExtResource("2_jw40y")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-304, -62)
-scale = Vector2(0.439453, 0.414062)
-texture = ExtResource("1_hwlyw")
+position = Vector2(-315, -9)
+scale = Vector2(2, 2)
+texture = ExtResource("3_dwtiy")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -222.0
-offset_top = -108.0
+offset_top = -45.0
 offset_right = 311.0
-offset_bottom = 100.0
+offset_bottom = 43.0
 text = "Mamawebo digo glugluglu"
