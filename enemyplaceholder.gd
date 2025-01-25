@@ -22,5 +22,10 @@ func _process(delta: float) -> void:
 
 func _input_event(viewport, event:InputEvent, shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if type == 0:
+			Global.points += 1
+		else:
+			Global.points += 5
 		print("clicked");
+		print(Global.points)
 		queue_free()

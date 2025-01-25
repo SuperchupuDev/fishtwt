@@ -7,8 +7,15 @@
 script = ExtResource("1_flxs4")
 
 [node name="Mob" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(586, 246)
+position = Vector2(576, 246)
 
 [node name="Mob2" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(586, 508)
+position = Vector2(576, 508)
 type = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 65.0
+offset_right = 163.0
+offset_bottom = 121.0
+text = "Followers: 0"
