@@ -19,3 +19,10 @@ offset_top = 65.0
 offset_right = 163.0
 offset_bottom = 121.0
 text = "Followers: 0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 237.0
+offset_right = 165.0
+offset_bottom = 293.0
+text = "Speed: 1"
