@@ -14,8 +14,20 @@ texture = ExtResource("2_txlmu")
 [node name="Mob" parent="." instance=ExtResource("1_qtrvh")]
 position = Vector2(576, 246)
 
+[node name="Mob4" parent="." instance=ExtResource("1_qtrvh")]
+position = Vector2(583, 127)
+type = 3
+
+[node name="Mob5" parent="." instance=ExtResource("1_qtrvh")]
+position = Vector2(562, 441)
+type = 4
+
+[node name="Mob3" parent="." instance=ExtResource("1_qtrvh")]
+position = Vector2(575, 329)
+type = 2
+
 [node name="Mob2" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(576, 508)
+position = Vector2(558, 543)
 type = 1
 
 [node name="Label" type="Label" parent="."]

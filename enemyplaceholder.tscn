@@ -20,6 +20,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_n44w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_jw40y")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -29,9 +30,10 @@ texture = ExtResource("3_biqlc")
 [node name="Label" type="Label" parent="."]
 offset_left = -222.0
 offset_top = -45.0
-offset_right = 311.0
+offset_right = 359.0
 offset_bottom = 43.0
 text = "Mamawebo digo glugluglu"
+autowrap_mode = 3
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

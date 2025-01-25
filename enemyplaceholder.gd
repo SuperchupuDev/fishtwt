@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var type: int
 var sprite:Sprite2D
 var label:Label
-var sprites=["res://fishpfp01.png","res://baitpfp01.png","res://placeholder.png","res://dolphinpfp1.png","res://blahajpfp1.png"]
+var sprites=["res://fishpfp01.png","res://baitpfp1.png","res://botpfp1.png","res://dolphinpfp1.png","res://blahajpfp1.png"]
 var messages=[
 	["Mamawebe digo glugluglu",
 	"I love the sea :()",
