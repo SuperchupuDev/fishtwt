@@ -32,3 +32,7 @@ offset_top = -45.0
 offset_right = 311.0
 offset_bottom = 43.0
 text = "Mamawebo digo glugluglu"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

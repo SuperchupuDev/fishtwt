@@ -14,6 +14,11 @@ func _ready() -> void:
 	label = get_node("Label")
 	label.text = messages[type][randi() % 2]
 
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	if Global.points > 0:
+		Global.points -= 1
+	print("i died")
+	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
