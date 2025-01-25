@@ -37,5 +37,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 			Global.speed += 1
 		elif old_points < 50 and Global.points >=50:
 			Global.speed += 1
+		elif old_points < 50 and Global.points >=70:
+			Global.speed += 1
 		print("clicked");
 		queue_free()

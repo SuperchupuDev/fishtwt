@@ -1,14 +1,14 @@
 extends Node
 
 var enemy = load("res://enemyplaceholder.tscn")
-var deeper = [["res://BACKGROUND11.png", "res://BACKGROUND21.png","res://BACKGROUND31.png","res://BACKGROUND41.png","res://BACKGROUND51.png"]]
+var deeper = (["res://BACKGROUND11.png", "res://BACKGROUND21.png","res://BACKGROUND31.png","res://BACKGROUND41.png","res://BACKGROUND51.png"])
 var background:Sprite2D
 var t: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	background = get_node("Sprite2D")
-	background = deeper[0]
+	background.texture =load(deeper[0])
 
 func SpawnObject():
 	var init_pos = Vector2(576,648)
@@ -20,15 +20,15 @@ func SpawnObject():
 		enemy_instance.type = 0
 	elif Global.speed == 2:
 		enemy_instance.type = randi() % 2
-		background=deeper[1]
+		background.texture=load(deeper[1])
 	elif Global.speed == 3:
 		enemy_instance.type = randi_range(0,2)
-		background=deeper[2]
+		background.texture=load(deeper[2])
 	elif Global.speed >= 4:
 		enemy_instance.type = randi_range (0,3)
-		background=deeper[3]
+		background.texture=load(deeper[3])
 	if Global.speed == 5:
-		background=deeper[4]
+		background.texture=load(deeper[4])
 	add_child(enemy_instance)
 	print("ola estoy spawneando")
 	
