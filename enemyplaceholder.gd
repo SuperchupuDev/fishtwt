@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var type: int
 var sprite:Sprite2D
 var label:Label
-var sprites=["res://pan.png","res://tran.png"]
+var sprites=["res://fishpfp1.png","res://fishpfp1.png"]
 var messages=[["pan1","pan2"],["tran1","tran2"]]
 var rng =RandomNumberGenerator.new()
 
