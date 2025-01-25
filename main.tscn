@@ -7,8 +7,8 @@
 script = ExtResource("1_flxs4")
 
 [node name="Mob" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(607, 360)
+position = Vector2(586, 246)
 
 [node name="Mob2" parent="." instance=ExtResource("1_qtrvh")]
-position = Vector2(607, 622)
+position = Vector2(586, 508)
 type = 1
