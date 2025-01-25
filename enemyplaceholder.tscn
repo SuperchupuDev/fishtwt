@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemyplaceholder.gd" id="1_2e40q"]
 [ext_resource type="Texture2D" uid="uid://c85yj5djkowqe" path="res://TEXTBOX1.png" id="2_jw40y"]
-[ext_resource type="Texture2D" uid="uid://dxcgidwihytln" path="res://fishpfp1.png" id="3_dwtiy"]
+[ext_resource type="Texture2D" uid="uid://bktxhr03jjrn6" path="res://fishpfp01.png" id="3_biqlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n44w5"]
 size = Vector2(764, 106)
@@ -24,8 +24,7 @@ texture = ExtResource("2_jw40y")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-315, -9)
-scale = Vector2(2, 2)
-texture = ExtResource("3_dwtiy")
+texture = ExtResource("3_biqlc")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -222.0
