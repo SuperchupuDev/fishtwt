@@ -27,7 +27,7 @@ func SpawnObject():
 	elif Global.speed >= 4:
 		enemy_instance.type = randi_range (0,3)
 		background.texture=load(deeper[3])
-	if Global.speed == 5:
+	if Global.speed >= 5:
 		background.texture=load(deeper[4])
 	add_child(enemy_instance)
 	print("ola estoy spawneando")
