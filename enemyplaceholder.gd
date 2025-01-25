@@ -65,7 +65,14 @@ func _ready() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if Global.points > 0:
-		Global.points -= 1
+		if type == 0 or type == 4:
+			Global.points -= 1
+		elif type == 1:
+			Global.points += 5
+		elif type == 2:
+			Global.points -=5
+		elif type == 3:
+			Global.points -=1
 	print("i died")
 	queue_free()
 
@@ -76,17 +83,27 @@ func _process(_delta: float) -> void:
 func _input_event(_viewport, event: InputEvent, _shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var old_points = Global.points
-		if type == 0:
+		if type == 0 or type == 4:
 			Global.points += 1
-		else:
-			Global.points += 5
+		elif Global.points > 0:
+			if type == 1:
+				Global.points -=5
+			elif type == 2:
+				Global.points -=10
+		elif type == 3:
+			Global.point +=1
 		if old_points < 10 and Global.points >= 10:
 			Global.speed = 2
 		elif old_points < 30 and Global.points >= 30:
 			Global.speed = 3
-		elif old_points < 50 and Global.points >=50:
-			Global.speed = 4
 		elif old_points < 70 and Global.points >=70:
+			Global.speed = 4
+		elif old_points < 100 and Global.points >=100:
 			Global.speed = 5
 		print("clicked");
 		queue_free()
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		if type == 2:
+			Global.points +=5
+		elif Global.points > 0:
+			Global.points -= 1
