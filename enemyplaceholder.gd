@@ -71,7 +71,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	linear_velocity = Vector2(0, -108) * Global.speed
 
 func _input_event(_viewport, event: InputEvent, _shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

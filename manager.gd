@@ -37,6 +37,6 @@ func _process(delta: float) -> void:
 	get_node("Label").text = "Followers: " + str(Global.points)
 	get_node("Label2").text = "Speed: " + str(Global.speed)
 	t += delta
-	if t >= 1.0:
-		t -= 1.0
+	if t >= 1.0 / Global.speed:
+		t -= 1.0 / Global.speed
 		SpawnObject()
