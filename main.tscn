@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://crrf5f38q8sth"]
+[gd_scene load_steps=8 format=3 uid="uid://crrf5f38q8sth"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_flxs4"]
 [ext_resource type="PackedScene" uid="uid://u3m4fscl81jc" path="res://enemyplaceholder.tscn" id="1_qtrvh"]
 [ext_resource type="Texture2D" uid="uid://dnfc8hmbmlmkb" path="res://BACKGROUND11.png" id="2_txlmu"]
 [ext_resource type="Texture2D" uid="uid://brue3rrv8kcr7" path="res://followercount1.png" id="3_4mxx1"]
+[ext_resource type="Texture2D" uid="uid://c7yndeaf566wp" path="res://reply1.png" id="5_2rqf6"]
+[ext_resource type="Texture2D" uid="uid://cfshhr8iwca61" path="res://reply2.png" id="6_jlnve"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kxk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2rqf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jlnve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_flxs4")
@@ -49,3 +65,8 @@ offset_top = 237.0
 offset_right = 165.0
 offset_bottom = 293.0
 text = "Speed: 1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1057, 33)
+sprite_frames = SubResource("SpriteFrames_4kxk4")
+frame_progress = 0.717865
