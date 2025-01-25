@@ -9,6 +9,7 @@ var rng =RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	sprite = get_node("Sprite2D2")
 	sprite.texture=load(sprites[type])
 	label = get_node("Label")

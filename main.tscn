@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://crrf5f38q8sth"]
+[gd_scene load_steps=3 format=3 uid="uid://crrf5f38q8sth"]
 
+[ext_resource type="Script" path="res://manager.gd" id="1_flxs4"]
 [ext_resource type="PackedScene" uid="uid://u3m4fscl81jc" path="res://enemyplaceholder.tscn" id="1_qtrvh"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_flxs4")
 
 [node name="Mob" parent="." instance=ExtResource("1_qtrvh")]
 position = Vector2(607, 360)
