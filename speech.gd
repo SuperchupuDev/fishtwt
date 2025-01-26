@@ -13,7 +13,17 @@ var imgs = [
 		"res://speechbubble7.png",
 		"res://speechbubble8.png",
 		"res://speechbubble9.png",
-		"res://speechbubble10.png"
+		"res://speechbubble10.png",
+		"res://speechbubble11.png",
+		"res://speechbubble12.png",
+		"res://speechbubble13.png",
+		"res://speechbubble14.png",
+		"res://speechbubble15.png",
+		"res://speechbubble16.png",
+		"res://speechbubble17.png",
+		"res://speechbubble18.png",
+		"res://speechbubble19.png",
+		"res://speechbubble20.png",
 	],
 	["res://blockbubble1.png"]]
 var snds = ["res://sfx/blocked.wav","res://sfx/blocked.wav"]

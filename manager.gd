@@ -10,6 +10,8 @@ func _ready() -> void:
 	background = get_node("Sprite2D")
 	background.texture =load(deeper[0])
 	$AnimatedSprite2D.play()
+	$AnimatedSprite2D2.play()
+	$AnimatedSprite2D3.play()
 
 func SpawnObject():
 	var init_pos = Vector2(576,648)

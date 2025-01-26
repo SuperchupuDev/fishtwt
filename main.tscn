@@ -1,14 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://crrf5f38q8sth"]
+[gd_scene load_steps=15 format=3 uid="uid://crrf5f38q8sth"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_flxs4"]
 [ext_resource type="PackedScene" uid="uid://u3m4fscl81jc" path="res://enemyplaceholder.tscn" id="1_qtrvh"]
 [ext_resource type="Texture2D" uid="uid://dnfc8hmbmlmkb" path="res://BACKGROUND11.png" id="2_txlmu"]
 [ext_resource type="Texture2D" uid="uid://brue3rrv8kcr7" path="res://followercount1.png" id="3_4mxx1"]
 [ext_resource type="Texture2D" uid="uid://c7yndeaf566wp" path="res://reply1.png" id="5_2rqf6"]
+[ext_resource type="Texture2D" uid="uid://dybmja2iipj31" path="res://block1.png" id="5_fanoj"]
+[ext_resource type="Texture2D" uid="uid://c0ybqqbms3t4p" path="res://block2.png" id="6_aaxux"]
 [ext_resource type="Texture2D" uid="uid://cfshhr8iwca61" path="res://reply2.png" id="6_jlnve"]
+[ext_resource type="Texture2D" uid="uid://b5rsy1d7qb6ax" path="res://hide1.png" id="7_pyddf"]
 [ext_resource type="AudioStream" uid="uid://ci67du7g58h0h" path="res://bgm.ogg" id="7_vy1l4"]
+[ext_resource type="Texture2D" uid="uid://by0bv35efyup3" path="res://hide2.png" id="8_obolr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kxk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fanoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aaxux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ep7fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pyddf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_obolr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tef3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -69,9 +101,17 @@ offset_bottom = 293.0
 text = "Speed: 1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1057, 33)
+position = Vector2(1057, 66)
 sprite_frames = SubResource("SpriteFrames_4kxk4")
 frame_progress = 0.717865
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1057, 99)
+sprite_frames = SubResource("SpriteFrames_ep7fr")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1057, 33)
+sprite_frames = SubResource("SpriteFrames_6tef3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_vy1l4")
