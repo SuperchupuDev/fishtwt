@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crrf5f38q8sth"]
+[gd_scene load_steps=15 format=3 uid="uid://crrf5f38q8sth"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_flxs4"]
 [ext_resource type="Texture2D" uid="uid://dnfc8hmbmlmkb" path="res://BACKGROUND11.png" id="2_txlmu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5rsy1d7qb6ax" path="res://hide1.png" id="7_pyddf"]
 [ext_resource type="Texture2D" uid="uid://by0bv35efyup3" path="res://hide2.png" id="8_obolr"]
 [ext_resource type="AudioStream" uid="uid://dwlqbjfey0gip" path="res://bgmv2.ogg" id="10_0y1dr"]
+[ext_resource type="Texture2D" uid="uid://dsmh5qqynlssu" path="res://guide1.png" id="11_0uyr2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kxk4"]
 animations = [{
@@ -134,3 +135,8 @@ stream = ExtResource("10_0y1dr")
 volume_db = -24.485
 autoplay = true
 parameters/looping = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1057, 532)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_0uyr2")
