@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crrf5f38q8sth"]
+[gd_scene load_steps=9 format=3 uid="uid://crrf5f38q8sth"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_flxs4"]
 [ext_resource type="PackedScene" uid="uid://u3m4fscl81jc" path="res://enemyplaceholder.tscn" id="1_qtrvh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brue3rrv8kcr7" path="res://followercount1.png" id="3_4mxx1"]
 [ext_resource type="Texture2D" uid="uid://c7yndeaf566wp" path="res://reply1.png" id="5_2rqf6"]
 [ext_resource type="Texture2D" uid="uid://cfshhr8iwca61" path="res://reply2.png" id="6_jlnve"]
+[ext_resource type="AudioStream" uid="uid://ci67du7g58h0h" path="res://bgm.ogg" id="7_vy1l4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kxk4"]
 animations = [{
@@ -70,3 +71,9 @@ text = "Speed: 1"
 position = Vector2(1057, 33)
 sprite_frames = SubResource("SpriteFrames_4kxk4")
 frame_progress = 0.717865
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vy1l4")
+volume_db = -24.485
+autoplay = true
+parameters/looping = true

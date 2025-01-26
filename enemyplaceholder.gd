@@ -64,13 +64,13 @@ func _ready() -> void:
 	label.text = messages[type][randi() % messages[type].size()]
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	if Global.points > 0:
-		if type == 0 or type == 4:
-			Global.points -= 1
-		elif type == 2:
-			Global.points -=5
-		elif type == 3:
-			Global.points -=1
+	if type == 0 or type == 4:
+		remove_points(1)
+	elif type == 2:
+		remove_points(5)
+	elif type == 3:
+		remove_points(1)
+	update_speed()
 	print("i died")
 	queue_free()
 
@@ -80,39 +80,43 @@ func _process(_delta: float) -> void:
 
 func _input_event(_viewport, event: InputEvent, _shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var old_points = Global.points
 		if type == 0 or type == 4:
-			Global.points += 1
-		elif Global.points > 0:
-			if type == 1:
-				Global.points -=5
-			elif type == 2:
-				Global.points -=10
+			add_points(1)
+		elif type == 1:
+			remove_points(5)
+		elif type == 2:
+			remove_points(10)
 		elif type == 3:
-			Global.points +=1
-		if old_points < 10 and Global.points >= 10:
-			Global.speed = 2
-		if old_points < 30 and Global.points >= 30:
-			Global.speed = 3
-		if old_points < 70 and Global.points >= 70:
-			Global.speed = 4
-		if old_points < 100 and Global.points >= 100:
-			Global.speed = 5
+			add_points(1)
+		update_speed()
 		print("clicked");
 		queue_free()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-		var old_points = Global.points
 		if type == 2:
-			Global.points +=5
-		elif Global.points > 0:
-			Global.points -= 1
-		if old_points < 10 and Global.points >= 10:
-			Global.speed = 2
-		if old_points < 30 and Global.points >= 30:
-			Global.speed = 3
-		if old_points < 70 and Global.points >= 70:
-			Global.speed = 4
-		if old_points < 100 and Global.points >= 100:
-			Global.speed = 5
+			add_points(5)
+		else:
+			remove_points(1)
+		update_speed()
 		print("blocked")
 		queue_free()
+
+func add_points(points: int):
+	Global.points += points
+
+func remove_points(points: int):
+	if Global.points > points:
+		Global.points -= points
+	else:
+		Global.points = 0
+
+func update_speed():
+	if Global.points >= 100:
+		Global.speed = 5
+	elif Global.points >= 70:
+		Global.speed = 4
+	elif Global.points >= 30:
+		Global.speed = 3
+	elif Global.points >= 10:
+		Global.speed = 2
+	else:
+		Global.speed = 1

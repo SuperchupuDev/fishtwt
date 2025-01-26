@@ -17,19 +17,15 @@ func SpawnObject():
 	enemy_instance.position = init_pos
 	if randi_range(1,1000) == 69:
 		enemy_instance.type = 4
-	elif  Global.speed < 2:
+	elif Global.speed < 2:
 		enemy_instance.type = 0
 	elif Global.speed == 2:
 		enemy_instance.type = randi() % 2
-		background.texture=load(deeper[1])
 	elif Global.speed == 3:
 		enemy_instance.type = randi_range(0,2)
-		background.texture=load(deeper[2])
 	elif Global.speed >= 4:
 		enemy_instance.type = randi_range (0,3)
-		background.texture=load(deeper[3])
-	if Global.speed >= 5:
-		background.texture=load(deeper[4])
+
 	add_child(enemy_instance)
 	print("ola estoy spawneando")
 	
@@ -37,7 +33,22 @@ func SpawnObject():
 func _process(delta: float) -> void:
 	get_node("Label").text = "Followers: " + str(Global.points)
 	get_node("Label2").text = "Speed: " + str(Global.speed)
+
+	update_bg()
+
 	t += delta
 	if t >= 1.0 / Global.speed:
 		t -= 1.0 / Global.speed
 		SpawnObject()
+
+func update_bg():
+	if Global.speed < 2:
+		background.texture = load(deeper[0])
+	elif Global.speed == 2:
+		background.texture = load(deeper[1])
+	elif Global.speed == 3:
+		background.texture = load(deeper[2])
+	elif Global.speed == 4:
+		background.texture = load(deeper[3])
+	if Global.speed >= 5:
+		background.texture = load(deeper[4])
