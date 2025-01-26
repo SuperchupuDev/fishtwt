@@ -61,6 +61,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Followers: 0"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 26.0
 offset_top = 237.0
 offset_right = 165.0

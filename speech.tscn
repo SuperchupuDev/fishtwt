@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi2ksw6xm5cib"]
+
+[ext_resource type="Script" path="res://speech.gd" id="1_rkydx"]
+[ext_resource type="Texture2D" uid="uid://066klvw7fraf" path="res://speechbubble2.png" id="2_pvsbv"]
+
+[node name="Speech" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp_mode = 1
+script = ExtResource("1_rkydx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pvsbv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -27.171
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

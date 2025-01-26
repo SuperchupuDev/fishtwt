@@ -1,6 +1,9 @@
 extends RigidBody2D
 
 @export var type: int
+
+var speech_element = load("res://speech.tscn")
+
 var sprite:Sprite2D
 var label:Label
 var sprites=["res://fishpfp01.png","res://baitpfp1.png","res://botpfp1.png","res://dolphinpfp1.png","res://blahajpfp1.png"]
@@ -103,6 +106,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _process(_delta: float) -> void:
 	linear_velocity = Vector2(0, -108) * Global.speed
 
+func speech(element_type: int):
+	var speech_instance = speech_element.instantiate()
+	speech_instance.position = Vector2(position.x + randf_range(-150, 150), position.y)
+	speech_instance.type = element_type
+	get_parent().add_child(speech_instance)
+
 func _input_event(_viewport, event: InputEvent, _shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if type == 0 or type == 4:
@@ -114,6 +123,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		elif type == 3:
 			add_points(1)
 		update_speed()
+		speech(0);
 		print("clicked");
 		queue_free()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
@@ -122,6 +132,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		else:
 			remove_points(1)
 		update_speed()
+		speech(1);
 		print("blocked")
 		queue_free()
 
