@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c0ybqqbms3t4p" path="res://block2.png" id="6_aaxux"]
 [ext_resource type="Texture2D" uid="uid://cfshhr8iwca61" path="res://reply2.png" id="6_jlnve"]
 [ext_resource type="Texture2D" uid="uid://b5rsy1d7qb6ax" path="res://hide1.png" id="7_pyddf"]
-[ext_resource type="AudioStream" uid="uid://ci67du7g58h0h" path="res://bgm.ogg" id="7_vy1l4"]
 [ext_resource type="Texture2D" uid="uid://by0bv35efyup3" path="res://hide2.png" id="8_obolr"]
+[ext_resource type="AudioStream" uid="uid://dwlqbjfey0gip" path="res://bgmv2.ogg" id="10_0y1dr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kxk4"]
 animations = [{
@@ -61,7 +61,7 @@ position = Vector2(576, 324)
 texture = ExtResource("2_txlmu")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(96, 82)
+position = Vector2(96, 81)
 texture = ExtResource("3_4mxx1")
 
 [node name="Label" type="Label" parent="."]
@@ -72,6 +72,34 @@ offset_bottom = 159.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Followers: 0"
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 290.0
+offset_right = 196.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "TRENDING TOPICS,
+"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 320.0
+offset_right = 197.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "worm
+yummy plankton
+gluglugluglub
+h
+pezamine
+webfishing
+PEZOE
+Plastilina
+RobTop
+Lenzetto
+Tirma®️"
+
 [node name="Label2" type="Label" parent="."]
 visible = false
 offset_left = 26.0
@@ -79,6 +107,14 @@ offset_top = 237.0
 offset_right = 165.0
 offset_bottom = 293.0
 text = "Speed: 1"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 167.0
+offset_right = 139.0
+offset_bottom = 223.0
+text = "GOAL: Reach 130 bootlickers"
+autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1057, 66)
@@ -94,7 +130,7 @@ position = Vector2(1057, 33)
 sprite_frames = SubResource("SpriteFrames_6tef3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_vy1l4")
+stream = ExtResource("10_0y1dr")
 volume_db = -24.485
 autoplay = true
 parameters/looping = true

@@ -70,13 +70,13 @@ var messages=[
 	"imagínate que tienes dos gambas",
 	"i must embrace the black mold",
 	"there is only one fish"],
-	["bla1","bla2"]
+	["me acabo de poner lenzetto en el mercadona","Will my seahorse stop liking me if i start testosterone?"]
 	]
 
 var sfx = [
 	["res://sfx/normal1.wav","res://sfx/normal2.wav"],
 	["res://sfx/bait1.wav","res://sfx/bait2.wav"],
-	["res://sfx/normal1.wav","res://sfx/normal1.wav"],
+	["res://sfx/radar.wav"],
 	["res://sfx/angry1.wav","res://sfx/angry2.wav"],
 	["res://sfx/normal1.wav","res://sfx/normal2.wav"]
 ]
@@ -128,7 +128,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		queue_free()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		if type == 2:
-			add_points(5)
+			add_points(3)
 		elif type == 3:
 			add_points(1)
 		elif type == 0 or type == 4: 
@@ -139,7 +139,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		queue_free()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_MIDDLE:
 		if type == 3:
-			add_points(5)
+			add_points(3)
 		elif type == 0 or type == 4:
 			remove_points(1)
 			update_speed()

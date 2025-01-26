@@ -33,15 +33,18 @@ func SpawnObject():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	get_node("Label").text = "Followers: " + str(Global.points)
-	get_node("Label2").text = "Speed: " + str(Global.speed)
+	#if Global.points >= 10:
+		#queue_free()
+	#else:
+		get_node("Label").text = "Followers: " + str(Global.points)
+		get_node("Label2").text = "Speed: " + str(Global.speed)
 
-	update_bg()
+		update_bg()
 
-	t += delta
-	if t >= 1.0 / Global.speed:
-		t -= 1.0 / Global.speed
-		SpawnObject()
+		t += delta
+		if t >= 1.0 / Global.speed:
+			t -= 1.0 / Global.speed
+			SpawnObject()
 
 func update_bg():
 	if Global.speed < 2:

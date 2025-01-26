@@ -26,12 +26,14 @@ var imgs = [
 		"res://speechbubble20.png",
 	],
 	["res://blockbubble1.png"]]
-var snds = ["res://sfx/blocked.wav","res://sfx/blocked.wav"]
+var snds = [["res://sfx/burbuja1.wav"],["res://sfx/blocked.wav"]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite2D.texture = load(imgs[type][randi() % imgs[type].size()])
-	$AudioStreamPlayer.stream = load(snds[type])
+	$AudioStreamPlayer.stream = load(snds[type][randi() % snds[type].size()])
+	if type == 0:
+		$AudioStreamPlayer.volume_db = -15
 	$AudioStreamPlayer.pitch_scale = randf_range(0.6, 1.2)
 	$AudioStreamPlayer.play()
 
