@@ -121,7 +121,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		elif type == 2:
 			remove_points(10)
 		elif type == 3:
-			add_points(1)
+			add_points(randi_range(-1,1))
 		update_speed()
 		speech(0);
 		print("clicked");
@@ -129,11 +129,21 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		if type == 2:
 			add_points(5)
-		else:
-			remove_points(1)
+		elif type == 3:
+			add_points(1)
+		elif type == 0 or type == 4: 
+			remove_points(5)
 		update_speed()
 		speech(1);
 		print("blocked")
+		queue_free()
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_MIDDLE:
+		if type == 3:
+			add_points(5)
+		elif type == 0 or type == 4:
+			remove_points(1)
+			update_speed()
+		print("hidden")
 		queue_free()
 
 func add_points(points: int):
