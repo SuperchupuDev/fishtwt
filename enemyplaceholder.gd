@@ -70,13 +70,23 @@ var messages=[
 	["bla1","bla2"]
 	]
 
+var sfx = [
+	["res://sfx/normal1.wav","res://sfx/normal2.wav"],
+	["res://sfx/bait1.wav","res://sfx/bait2.wav"],
+	["res://sfx/normal1.wav","res://sfx/normal1.wav"],
+	["res://sfx/angry1.wav","res://sfx/angry2.wav"],
+	["res://sfx/normal1.wav","res://sfx/normal2.wav"]
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	sprite = get_node("Sprite2D2")
 	sprite.texture=load(sprites[type])
 	label = get_node("Label")
 	label.text = messages[type][randi() % messages[type].size()]
+	$AudioStreamPlayer.stream = load(sfx[type][randi() % sfx[type].size()])
+	$AudioStreamPlayer.pitch_scale = randf_range(0.5, 2.5)
+	$AudioStreamPlayer.play()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if type == 0 or type == 4:
