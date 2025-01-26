@@ -95,7 +95,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	if type == 0 or type == 4:
 		remove_points(1)
 	elif type == 2:
-		remove_points(5)
+		remove_points(3)
 	elif type == 3:
 		remove_points(1)
 	update_speed()
@@ -117,9 +117,9 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		if type == 0 or type == 4:
 			add_points(1)
 		elif type == 1:
-			remove_points(5)
+			remove_points(3)
 		elif type == 2:
-			remove_points(10)
+			remove_points(5)
 		elif type == 3:
 			add_points(randi_range(-1,1))
 		update_speed()
@@ -132,7 +132,7 @@ func _input_event(_viewport, event: InputEvent, _shape_idx):
 		elif type == 3:
 			add_points(1)
 		elif type == 0 or type == 4: 
-			remove_points(5)
+			remove_points(2)
 		update_speed()
 		speech(1);
 		print("blocked")
